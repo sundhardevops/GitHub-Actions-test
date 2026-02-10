@@ -1,28 +1,27 @@
-name: My First GitHub Actions
+name: Branch Wise Pipeline
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/**
 
 jobs:
-  build:
+  dev:
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9, 3.13]
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - run: echo "Running DEV pipeline"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
+  prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running PROD pipeline"
 
-    - name: Run tests
-      run: |
-        cd src
-        python -m pytest addition.py
+  feature:
+    if: startsWith(github.ref, 'refs/heads/feature/')
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running FEATURE pipeline"
