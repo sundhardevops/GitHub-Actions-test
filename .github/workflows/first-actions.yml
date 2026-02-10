@@ -24,7 +24,7 @@ jobs:
         run : ls -la
 
   feature:
-    if: startsWith(github.ref, 'refs/heads/feature/')
+    if: startsWith(github.ref, 'refs/heads/feature')
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running FEATURE pipeline"
