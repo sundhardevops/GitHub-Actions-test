@@ -23,7 +23,7 @@ jobs:
       - name : print files
         run : ls -la
 
-  feature:
+  Feature:
     if: startsWith(github.ref, 'refs/heads/Feature/')
     runs-on: ubuntu-latest
     steps:
