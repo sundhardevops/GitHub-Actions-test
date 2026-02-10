@@ -29,3 +29,6 @@ jobs:
       - run: echo "Running FEATURE pipeline"
       - name : print files using feature pipeline
         run : ls -lrt
+      - run: |
+            echo "REF=$GITHUB_REF"
+            echo "REF_NAME=$GITHUB_REF_NAME"
