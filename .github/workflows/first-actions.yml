@@ -28,3 +28,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running FEATURE pipeline"
+      - name : checking the file system using Future Pipeline
+        run : ls -lrt
