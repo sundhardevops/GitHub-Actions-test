@@ -9,7 +9,6 @@ env:
   DOCKER_HOST: tcp://<ip-address-of-your-swarm-manager>:2376
   DOCKER_REGISTRY_USER: <username>
   DOCKER_REGISTRY_PASS: ${{ secrets.DOCKER_REGISTRY_PASS }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
