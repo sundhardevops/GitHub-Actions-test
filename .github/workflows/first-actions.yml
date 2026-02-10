@@ -21,10 +21,12 @@ jobs:
       - name: run prod pipeline 
         run: echo "Running PROD pipeline"
       - name : print files
-        run : ls -la
+        run : ls -lrt
 
   feature:
     if: startsWith(github.ref, 'refs/heads/feature')
     runs-on: ubuntu-latest
     steps:
       - run: echo "Running FEATURE pipeline"
+      - name : print files using feature pipeline
+        run : ls -lrt
