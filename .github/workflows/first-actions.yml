@@ -20,13 +20,7 @@ jobs:
       - name: run prod pipeline 
         run: echo "Running PROD pipeline"
       - name : print files
-        run : ls -lrt
-      - name: Clone repository
-        ansible.builtin.git:
-           repo: "https://github.com/sundhardevops/GitHub-Actions-test.git"
-           dest: "/opt/repository"
-           version: "main"
-          update: yes 
+        run : ls -lrt    
 
   feature:
     if: startsWith(github.ref, 'refs/heads/feature/test-new')
