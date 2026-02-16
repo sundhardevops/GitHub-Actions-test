@@ -20,7 +20,7 @@ jobs:
       - name: run prod pipeline 
         run: echo "Running PROD pipeline"
       - name : print files
-        run : ls -lrt    
+        run : ls -lrt         
 
   feature:
     if: startsWith(github.ref, 'refs/heads/feature/test-new')
