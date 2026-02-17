@@ -30,6 +30,8 @@ jobs:
          sudo apt-get install -y ansible           
       - name: Check Ansible Version
         run: ansible --version
+      - name: Run Ansible Playbook
+        run: ansible-playbook playbook.yml
 
   feature:
     if: startsWith(github.ref, 'refs/heads/feature/test-new')
