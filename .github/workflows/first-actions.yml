@@ -32,8 +32,10 @@ jobs:
         run: ansible --version
       - name: Checkout code
         uses: actions/checkout@v3
+      - name : print files
+        run : ls -lrt 
       - name: Run Ansible Playbook
-        run: ansible-playbook playbook.yml
+        run: ansible-playbook .github/workflows/playbook.yml
 
   feature:
     if: startsWith(github.ref, 'refs/heads/feature/test-new')
