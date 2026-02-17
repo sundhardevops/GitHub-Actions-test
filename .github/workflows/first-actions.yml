@@ -22,10 +22,10 @@ jobs:
       - name : print files
         run : ls -lrt 
       - name: Install Ansible
-        run: sudo apt update -y
-             sudo apt update software-properties-common -y
-             sudo apt-add-repository -y ppa:ansible/ansible
-             sudo apt install ansible -y             
+        run: sudo apt-get update -y
+             sudo apt-get update software-properties-common -y
+             sudo apt-get-add-repository -y ppa:ansible/ansible
+             sudo apt-get install ansible -y             
       - name: Check Ansible Version
         run: ansible --version
 
