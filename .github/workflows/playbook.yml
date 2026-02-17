@@ -4,5 +4,5 @@
   - name: clone repo
     git: 
       repo: "https://github.com/sundhardevops/GitHub-Actions-test.git"
-      dest: /opt/
+      dest: /home
       version: main
