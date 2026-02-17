@@ -1,6 +1,8 @@
 ---
-- name: clone repo
-ansible.builtin.git:
- repo: "https://github.com/username/repository.git"
- dest: /opt/repository
- version: main
+- hosts: localhost
+  tasks:
+	- name: clone repo
+	  git:
+			  repo: "https://github.com/sundhardevops/GitHub-Actions-test.git"
+					dest: /opt/
+					version: main
