@@ -12,3 +12,5 @@
       repo: "https://github.com/sundhardevops/GitHub-Actions-test.git"
       dest: /home/mydirectory
       version: main
+   -name: list repo folder
+    command: ls -lrt /home/mydirectory
