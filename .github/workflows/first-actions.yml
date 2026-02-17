@@ -20,7 +20,12 @@ jobs:
       - name: run prod pipeline 
         run: echo "Running PROD pipeline"
       - name : print files
-        run : ls -lrt         
+        run : ls -lrt 
+      - name: Install Ansible
+        run: sudo apt update
+             sudo apt install -y ansible
+      - name: Check Ansible Version
+        run: ansible --version
 
   feature:
     if: startsWith(github.ref, 'refs/heads/feature/test-new')
