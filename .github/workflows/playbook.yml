@@ -1,8 +1,8 @@
 ---
 - hosts: localhost
   tasks:
-	- name: clone repo
-	  git:
-			  repo: "https://github.com/sundhardevops/GitHub-Actions-test.git"
-					dest: /opt/
-					version: main
+  - name: clone repo
+    git: 
+      repo: "https://github.com/sundhardevops/GitHub-Actions-test.git"
+      dest: /opt/
+      version: main
